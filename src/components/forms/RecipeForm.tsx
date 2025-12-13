@@ -13,7 +13,8 @@ export default function RecipeForm(){
     const [calories, setCalories] = useState(75);
     const [craftingTime, setCraftingTime] = useState(5);
     const [craftingTable, setCraftingTable] = useState("Workbench");
-
+    if(id)
+        return
     return(
         <form>
             <StringInput 
