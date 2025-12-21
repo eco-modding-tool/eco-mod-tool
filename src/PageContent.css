@@ -1,0 +1,20 @@
+.page-content {
+    padding: 1%;
+    display: flex;
+    gap: 1%;
+
+    background-color: #213448;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.left-content,
+.right-content {
+  flex: 1;
+  background-color: #547792;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  height: auto;
+}

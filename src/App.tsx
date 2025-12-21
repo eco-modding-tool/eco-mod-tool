@@ -1,11 +1,14 @@
-import './App.css'
-import RecipeForm from './components/forms/RecipeForm'
+import NavBar from './components/layout/NavBar'
+import Title from './components/layout/Title'
+import PageContent from './PageContent'
 
 function App() {
 
   return (
     <>
-    <RecipeForm/>
+    <Title/>
+    <NavBar/>
+    <PageContent/>
     </>
   )
 }

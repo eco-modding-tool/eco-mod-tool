@@ -1,0 +1,64 @@
+.navbar {
+  display: flex;
+  padding-top: 0.5rem;
+
+  background-color: #f5f5f5;
+}
+
+.nav-item {
+  background: transparent;
+  border: 1px solid #213448;
+  border-bottom: none;
+
+  color: #213448;
+  padding: 0.5rem 1rem;
+
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Hover */
+.nav-item:hover:not(.active) {
+  background-color: #222;
+  color: #eaeaea;
+}
+
+/* Onglet actif */
+.nav-item.active {
+  background-color: #213448; /* même couleur que page-content */
+  color: #ffffff;
+
+  position: relative;
+  top: 1px; /* “descend” dans le contenu */
+  border-color: #2a2a2a; /* masque la séparation */
+}
+
+/*.navbar-button {
+  padding: 0.4rem 0.8rem;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  background-color: transparent;
+  color: #333;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #eaeaea;
+}
+
+.navbar-button.active {
+  background-color: #ddd;
+  border-color: #bbb;
+  cursor: default;
+}
