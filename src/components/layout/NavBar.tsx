@@ -1,27 +1,28 @@
-import { useState } from "react"
 import "./NavBar.css"
+import { useFormsContext } from "../context/FormsContext";
 
-export default function NavBar(){
-    const [ongletActif, setOngletActif] = useState<"item" | "recipe" | "object">("item");
+export default function NavBar() {
+  const context = useFormsContext();
+  const {onglet, setOnglet} = context;
 
-    return (
+  return (
     <nav className="navbar">
       <button
-        className={`nav-item ${ongletActif === "item" ? "active" : ""}`}
-        onClick={() => setOngletActif("item")}
+        className={`nav-item ${onglet === "item" ? "active" : ""}`}
+        onClick={() => setOnglet("item")}
       >
         ITEM
       </button>
 
       <button
-        className={`nav-item ${ongletActif === "recipe" ? "active" : ""}`}
-        onClick={() => setOngletActif("recipe")}
+        className={`nav-item ${onglet === "recipe" ? "active" : ""}`}
+        onClick={() => setOnglet("recipe")}
       >
         RECIPE
       </button>
       <button
-        className={`nav-item ${ongletActif === "object" ? "active" : ""}`}
-        onClick={() => setOngletActif("object")}
+        className={`nav-item ${onglet === "object" ? "active" : ""}`}
+        onClick={() => setOnglet("object")}
       >
         OBJECT
       </button>
