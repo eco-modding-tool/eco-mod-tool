@@ -1,31 +1,30 @@
-import "./NavBar.css"
-import { useFormsContext } from "../context/FormsContext";
+import "./NavBar.css";
+import { useFormsContext, type Onglet } from "../context/FormsContext";
+
+const TABS: { id: Onglet; label: string }[] = [
+  { id: "skill", label: "SKILL" },
+  { id: "talent", label: "TALENT" },
+  { id: "upgrade", label: "UPGRADE" },
+  { id: "table", label: "TABLE" },
+  { id: "item", label: "ITEM" },
+  { id: "recipe", label: "RECIPE" },
+  { id: "registry", label: "REGISTRE" },
+];
 
 export default function NavBar() {
-  const context = useFormsContext();
-  const {onglet, setOnglet} = context;
+  const { onglet, setOnglet } = useFormsContext();
 
   return (
     <nav className="navbar">
-      <button
-        className={`nav-item ${onglet === "item" ? "active" : ""}`}
-        onClick={() => setOnglet("item")}
-      >
-        ITEM
-      </button>
-
-      <button
-        className={`nav-item ${onglet === "recipe" ? "active" : ""}`}
-        onClick={() => setOnglet("recipe")}
-      >
-        RECIPE
-      </button>
-      <button
-        className={`nav-item ${onglet === "object" ? "active" : ""}`}
-        onClick={() => setOnglet("object")}
-      >
-        OBJECT
-      </button>
+      {TABS.map((tab) => (
+        <button
+          key={tab.id}
+          className={`nav-item ${onglet === tab.id ? "active" : ""}`}
+          onClick={() => setOnglet(tab.id)}
+        >
+          {tab.label}
+        </button>
+      ))}
     </nav>
   );
 }

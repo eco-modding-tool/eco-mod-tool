@@ -1,19 +1,8 @@
-import { useState, type ReactElement } from "react";
-import { FormsContext } from "./FormsContext";
+import { useState, type ReactNode } from "react";
+import { FormsContext, type Onglet } from "./FormsContext";
 
-type ContextProps = {
-    children: ReactElement | ReactElement[];
-}
+export default function FormsProvider({ children }: { children: ReactNode }) {
+  const [onglet, setOnglet] = useState<Onglet>("item");
 
-export default function Context({children}:ContextProps){
-    const [onglet, setOnglet] = useState<'item' | 'recipe' | 'object'>('item');
-
-    return(
-        <FormsContext.Provider value={{
-            onglet,
-            setOnglet,
-            }}>
-            {children}
-        </FormsContext.Provider>
-    )
+  return <FormsContext.Provider value={{ onglet, setOnglet }}>{children}</FormsContext.Provider>;
 }

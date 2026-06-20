@@ -1,18 +1,19 @@
-
-import Context from './components/context/FormsProvider'
-import NavBar from './components/layout/NavBar'
-import Title from './components/layout/Title'
-import PageContent from './PageContent'
+import FormsProvider from "./components/context/FormsProvider";
+import RegistryProvider from "./components/context/RegistryProvider";
+import NavBar from "./components/layout/NavBar";
+import Title from "./components/layout/Title";
+import PageContent from "./PageContent";
 
 function App() {
-
   return (
-    <Context>
-      <Title />
-      <NavBar />
-      <PageContent />
-    </Context>
-  )
+    <RegistryProvider>
+      <FormsProvider>
+        <Title />
+        <NavBar />
+        <PageContent />
+      </FormsProvider>
+    </RegistryProvider>
+  );
 }
 
-export default App
+export default App;

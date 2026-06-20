@@ -1,11 +1,11 @@
 .page-content {
-    padding: 1%;
-    display: flex;
-    gap: 1%;
+  padding: 1%;
+  display: flex;
+  gap: 1%;
 
-    background-color: #213448;
-    height: 100%;
-    align-items: flex-start;
+  background-color: #213448;
+  min-height: calc(100% - 100px);
+  align-items: flex-start;
 }
 
 .left-content,
@@ -17,4 +17,11 @@
   padding: 1.5rem;
   box-sizing: border-box;
   height: auto;
+  min-width: 0;
+}
+
+.right-content {
+  background-color: #1e1e1e;
+  padding: 0;
+  overflow: hidden;
 }

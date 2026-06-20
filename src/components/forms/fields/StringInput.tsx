@@ -3,25 +3,21 @@ type StringInputProps = {
   value: string;
   onChange?: (val: string) => void;
   readonly?: boolean;
+  hint?: string;
 };
 
-export default function StringInput({ label, value, onChange, readonly }: StringInputProps) {
+export default function StringInput({ label, value, onChange, readonly, hint }: StringInputProps) {
   return (
-    <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
-      <label style={{ width: 120 }}>{label}:</label>
+    <div className="field-row">
+      <label className="field-label">{label}</label>
       <input
         type="text"
         value={value}
         onChange={onChange ? (e) => onChange(e.target.value) : undefined}
         readOnly={readonly}
-        style={{
-          flex: 1,
-          padding: 4,
-          backgroundColor: readonly ? "#eee" : "white",
-          color: readonly ? "#666" : "#000",
-          border: "1px solid #ccc",
-        }}
+        className={`field-input ${readonly ? "field-input-readonly" : ""}`}
       />
+      {hint && <span className="field-hint">{hint}</span>}
     </div>
   );
 }

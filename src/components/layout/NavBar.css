@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   padding-top: 0.5rem;
-
   background-color: #f5f5f5;
 }
 
@@ -22,44 +22,16 @@
   transition: background-color 0.2s, color 0.2s;
 }
 
-/* Hover */
 .nav-item:hover:not(.active) {
   background-color: #222;
   color: #eaeaea;
 }
 
-/* Onglet actif */
 .nav-item.active {
-  background-color: #213448; /* même couleur que page-content */
+  background-color: #213448;
   color: #ffffff;
 
   position: relative;
-  top: 1px; /* “descend” dans le contenu */
-  border-color: #2a2a2a; /* masque la séparation */
+  top: 1px;
+  border-color: #2a2a2a;
 }
-
-/*.navbar-button {
-  padding: 0.4rem 0.8rem;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  background-color: transparent;
-  color: #333;
-
-  border: 1px solid #ccc;
-  border-radius: 4px;
-
-  cursor: pointer;
-}
-
-.navbar-button:hover {
-  background-color: #eaeaea;
-}
-
-.navbar-button.active {
-  background-color: #ddd;
-  border-color: #bbb;
-  cursor: default;
-}
-*/
